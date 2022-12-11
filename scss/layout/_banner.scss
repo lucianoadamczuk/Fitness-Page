@@ -1,0 +1,14 @@
+.banner{
+    width: 100%;
+    height: 100px;
+
+    @include flexStructureRow;
+
+    @include bannerImage;
+
+        p{
+            color: $color__secondary;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+}

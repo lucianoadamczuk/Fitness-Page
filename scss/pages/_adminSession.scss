@@ -1,0 +1,258 @@
+.adminSession{
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 10% 70%;
+    grid-template-areas: 
+    "titleContainer"
+    "searchbarContainer"
+    "peopleContainer";
+
+    justify-items: center;
+
+        // titleContainer
+        .titleContainer{
+            grid-area: titleContainer;
+            
+            @include flexStructureRow;
+            text-align: center;
+        }
+        
+        // searchbarContainer
+        .searchbarContainer{
+            grid-area: searchbarContainer;
+            
+            width: 95%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+                input{
+                    width: 60%;
+                    max-width: 300px;
+                    height: 60%;
+
+                    padding: 2px 10px 2px 10px;
+
+                    border-radius: 10px 0 0 10px;
+                    outline: none;
+                }
+
+                .button{
+                    width: 50px;
+                    height: 60%;
+
+                    @include flexStructureRow;
+
+                    background-color: $color__secondary-transparent;
+
+                    cursor: pointer;
+                        svg{
+                            width: 80%;
+                            height: 80%;
+                        }
+                }
+
+                .button:active{
+                    background-color: $color__secondary;
+                }
+        }
+
+        // peopleContainer
+        .peopleContainer{
+            grid-area: peopleContainer;
+
+            width: 95%;
+            height: 85%;
+            
+            
+            border-radius: 10px;
+
+                // columns
+                .columns{
+                    width: 100%;
+                    height: 10%;
+
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    background-color: white;
+
+                        p{
+                            color: black;
+                            font-weight: bold;
+                        }
+
+                        .columnType, .columnState{
+                            display: none;
+                        }
+                }
+
+                // people
+                .people{
+                    width: 100%;
+                    
+                    height: 100%;
+                    
+
+                    display: flex;
+                    flex-direction: column;
+
+                    border: 1px solid white;
+
+                    overflow-y: scroll;
+
+                        // person
+                        .person{
+                            width: 100%;
+                            height: auto;
+
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            text-align: center;
+
+                            border-bottom:1px solid white ;
+
+                                a{
+                                    color: $color__secondary;
+                                }
+                                
+                                a:hover{
+                                    color: $color__primary-transparent;
+                                }
+
+                                a:active{
+                                    color: $color__primary;
+                                }
+                                .columnType, .columnState{
+                                    display: none;
+                                }
+                        }
+                }
+
+                // I repeated these two to work easier with their font sizes
+
+                // columns
+                .columns{
+                    .columnName{
+                        width: 40%;
+
+                        padding-left: 20px;
+                        font-size: 1.5rem;
+                        text-align: left;
+                    }
+                    
+                    .columnNutrition, .columnRoutine{
+                        width: calc(60% / 2);
+
+                        font-size: 1.5rem;
+                        text-align: center;
+                    }                 
+                }
+
+                // people
+                .people{
+                    .person{
+                        .columnName{
+                            width: 40%;
+                            padding-left: 10px;
+                            font-size: 1.5rem;
+                            text-align: left;
+                        }
+                        
+                        .columnNutrition, .columnRoutine{
+                            width: calc(60% / 2);
+    
+                            font-size: 1.5rem;
+                            display: flex;
+                            justify-content: center;
+                        }                 
+                    }
+                }
+        } 
+}
+
+@media screen and (min-width:300px){
+    .adminSession{
+
+        // searchbarContainer
+        .searchbarContainer{
+            justify-content:right;
+        }
+
+        // peopleContainer
+        .peopleContainer{
+
+            // columns
+            .columns{
+                .columnName{
+                    font-size: 2rem;
+                }
+                
+                .columnNutrition, .columnRoutine{
+                    font-size: 2rem;
+                }                 
+            }
+        
+            // people
+            .people{
+                .person{
+                    .columnName{
+                        font-size: 2rem;
+                    }
+                    
+                    .columnNutrition, .columnRoutine{
+                        font-size: 2rem;
+                    }                 
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:700px){
+    .adminSession{
+        .peopleContainer{
+
+            // columns
+            .columns{
+                .columnName{
+                    width: 30%;
+                    font-size: 3rem;
+                }
+                
+                .columnType, .columnState, .columnNutrition, .columnRoutine{
+                    width: calc(70% / 4);
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    font-size: 3rem;
+                }                 
+            }
+            
+            // people
+            .people{
+                .person{
+                    .columnName{
+                        width: 30%;
+                        font-size: 3rem;
+                    }
+                    
+                    .columnType, .columnState, .columnNutrition, .columnRoutine{
+                        width: calc(70% / 4);
+                        display: flex;
+                        text-align: center;
+                        justify-content: center;
+                        font-size: 3rem;
+                    }                 
+                }
+            }
+        }
+    }
+}

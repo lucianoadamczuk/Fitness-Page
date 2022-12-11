@@ -1,0 +1,1413 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(169, 4, 191, 0.5);
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, p {
+  color: white;
+}
+
+h3 {
+  font-size: 5rem;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  padding: 5px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: 0.5s;
+}
+nav .logoContainer {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+nav .menuContainer {
+  width: calc(100% - 100px - 100px);
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav .menuContainer .tablet, nav .menuContainer .desktop {
+  display: none;
+}
+nav .menuContainer .tablet a, nav .menuContainer .desktop a {
+  width: auto;
+  margin: 20px;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
+nav .menuContainer .tablet a:hover, nav .menuContainer .desktop a:hover {
+  color: rgb(169, 4, 191);
+}
+nav .dropdownContainer {
+  width: 100px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav .dropdownContainer .dropdown {
+  width: 80%;
+  height: 80%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+}
+nav .dropdownContainer .dropdown .arrowDown {
+  display: block;
+}
+nav .dropdownContainer .dropdown .arrowUp {
+  display: none;
+}
+nav .dropdownContainer .dropdown .show {
+  display: flex;
+}
+nav .dropdownContainer .dropdown .hide {
+  display: none;
+}
+nav .dropdownContainer .borderModifier {
+  border-radius: 10px 10px 0px 0px;
+}
+nav .dropdownContainer .dropdown__menu {
+  width: auto;
+  min-width: 100px;
+  height: auto;
+  position: absolute;
+  right: 10px;
+  top: 45px;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+nav .dropdownContainer .dropdown__menu a {
+  width: 100%;
+  height: 50px;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+}
+nav .dropdownContainer .dropdown__menu a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+nav .dropdownContainer .show {
+  display: flex;
+}
+
+.navModifier {
+  background-color: rgb(145, 222, 69);
+}
+
+.showNavInAdminSession {
+  background-color: rgb(145, 222, 69);
+}
+
+@media screen and (min-width: 700px) {
+  nav .menuContainer .tablet {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  nav .menuContainer .tablet {
+    display: none;
+  }
+  nav .menuContainer .desktop {
+    display: flex;
+  }
+}
+.hero {
+  width: 100%;
+  height: 100vh;
+}
+.hero .titleContainer {
+  width: 100%;
+  height: auto;
+  padding: 0px 50px 0 50px;
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  z-index: 1;
+}
+.hero .titleContainer h1 {
+  font-size: 4rem;
+  color: rgba(169, 4, 191, 0.5);
+  text-align: center;
+}
+.hero .carousel {
+  width: 100%;
+  height: 100%;
+}
+.hero .carousel .carousel-indicators button {
+  background-color: rgb(145, 222, 69);
+}
+.hero .carousel .carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+.hero .carousel .carousel-inner .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+.hero .carousel .carousel-inner .carousel-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero .carousel .carousel-control-prev, .hero .carousel .carousel-control-next {
+  height: calc(100% + 60px);
+}
+
+@media screen and (min-width: 700px) {
+  .hero .titleContainer h1 {
+    font-size: 8rem;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .hero .titleContainer h1 {
+    font-size: 10rem;
+    text-align: left;
+  }
+}
+main {
+  width: 100%;
+  height: auto;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  padding: 70px 10px 10px 10px;
+  background-color: black;
+}
+
+footer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(145, 222, 69);
+}
+footer .socialMediaContainer {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .socialMediaContainer .bi-instagram, footer .socialMediaContainer .bi-facebook, footer .socialMediaContainer .bi-youtube {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  fill: white;
+}
+footer .socialMediaContainer .bi:hover {
+  fill: rgb(169, 4, 191);
+}
+footer .legalContainer {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .legalContainer p {
+  margin: 10px;
+  color: white;
+  font-size: 1rem;
+}
+footer .legalContainer p:hover {
+  color: rgb(169, 4, 191);
+}
+
+@media screen and (min-width: 1000px) {
+  footer .legalContainer p {
+    margin: 20px;
+    font-size: 1.5rem;
+  }
+}
+.banner {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/textures/banner.png);
+  background-attachment: fixed;
+}
+.banner p {
+  color: rgb(169, 4, 191);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.box {
+  width: 90%;
+  position: relative;
+  background-color: rgb(169, 4, 191);
+  border: 4px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+.box .imgBox-1, .box .imgBox-2, .box .imgBox-3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 20%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.box .videoBox-1-mobile, .box .videoBox-2-mobile, .box .videoBox-3-mobile, .box .videoBox-1, .box .videoBox-2, .box .videoBox-3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.box .videoBox-1, .box .videoBox-2, .box .videoBox-3 {
+  display: none;
+}
+
+.box:hover {
+  scale: 105%;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.5);
+  transition-duration: 0.8s;
+}
+
+.simpleBox {
+  height: 100%;
+}
+.simpleBox .title {
+  width: 100%;
+  padding-left: 10px;
+}
+.simpleBox .title h4 {
+  font-size: 4rem;
+}
+.simpleBox .titleContainerLeave-1, .simpleBox .titleContainerLeave-2, .simpleBox .titleContainerLeave-3 {
+  height: 100%;
+  display: none;
+}
+.simpleBox .titleLeave-1, .simpleBox .titleLeave-2, .simpleBox .titleLeave-3 {
+  display: none;
+  z-index: 1;
+}
+.simpleBox .description {
+  width: 100%;
+  height: 50%;
+  padding: 10px 10px 10px 20px;
+}
+.simpleBox .description p {
+  font-size: 2rem;
+  font-style: italic;
+  z-index: 1;
+}
+.simpleBox .buttonContainer {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.simpleBox .buttonContainer .boxButton {
+  width: 40%;
+  height: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-size: 2rem;
+  color: white;
+  z-index: 1;
+}
+.simpleBox .buttonContainer .boxButton:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 700px) {
+  .box {
+    width: 650px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .box {
+    width: 30%;
+    height: 100%;
+  }
+  .box .videoBox-1-mobile, .box .videoBox-2-mobile, .box .videoBox-3-mobile {
+    display: none;
+  }
+  .box .videoBox-1, .box .videoBox-2, .box .videoBox-3 {
+    display: block;
+  }
+  .simpleBox .titleContainerLeave-1, .simpleBox .titleContainerLeave-2, .simpleBox .titleContainerLeave-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .simpleBox .titleContainerLeave-1 .titleLeave-1, .simpleBox .titleContainerLeave-1 .titleLeave-2, .simpleBox .titleContainerLeave-1 .titleLeave-3, .simpleBox .titleContainerLeave-2 .titleLeave-1, .simpleBox .titleContainerLeave-2 .titleLeave-2, .simpleBox .titleContainerLeave-2 .titleLeave-3, .simpleBox .titleContainerLeave-3 .titleLeave-1, .simpleBox .titleContainerLeave-3 .titleLeave-2, .simpleBox .titleContainerLeave-3 .titleLeave-3 {
+    display: flex;
+    font-size: 6rem;
+    z-index: 1;
+  }
+  .simpleBox .titleContainerEnter-1, .simpleBox .titleContainerEnter-2, .simpleBox .titleContainerEnter-3 {
+    height: 20%;
+    display: none;
+  }
+  .simpleBox .titleContainerEnter-1 .titleEnter-1, .simpleBox .titleContainerEnter-1 .titleEnter-2, .simpleBox .titleContainerEnter-1 .titleEnter-3, .simpleBox .titleContainerEnter-2 .titleEnter-1, .simpleBox .titleContainerEnter-2 .titleEnter-2, .simpleBox .titleContainerEnter-2 .titleEnter-3, .simpleBox .titleContainerEnter-3 .titleEnter-1, .simpleBox .titleContainerEnter-3 .titleEnter-2, .simpleBox .titleContainerEnter-3 .titleEnter-3 {
+    font-size: 6rem;
+    z-index: 1;
+  }
+  .simpleBox .description, .simpleBox .buttonContainer {
+    display: none;
+  }
+  .simpleBox:hover .titleContainerLeave-1, .simpleBox:hover .titleContainerLeave-2, .simpleBox:hover .titleContainerLeave-3 {
+    transition: all;
+    transition-duration: 1s;
+    height: 0%;
+  }
+  .simpleBox:hover .titleContainerLeave-1 .titleLeave-1, .simpleBox:hover .titleContainerLeave-1 .titleLeave-2, .simpleBox:hover .titleContainerLeave-1 .titleLeave-3, .simpleBox:hover .titleContainerLeave-2 .titleLeave-1, .simpleBox:hover .titleContainerLeave-2 .titleLeave-2, .simpleBox:hover .titleContainerLeave-2 .titleLeave-3, .simpleBox:hover .titleContainerLeave-3 .titleLeave-1, .simpleBox:hover .titleContainerLeave-3 .titleLeave-2, .simpleBox:hover .titleContainerLeave-3 .titleLeave-3 {
+    display: flex;
+    transform: translateY(350%);
+    opacity: 0%;
+    transition-duration: 0.3s;
+  }
+  .simpleBox:hover .titleContainerEnter-1, .simpleBox:hover .titleContainerEnter-2, .simpleBox:hover .titleContainerEnter-3 {
+    height: 20%;
+    transition-delay: 0.5s;
+    transition-duration: 1.6s;
+    display: flex;
+  }
+  .simpleBox:hover .description, .simpleBox:hover .buttonContainer {
+    transition: all;
+    transition-duration: 1s;
+    transition-delay: 1s;
+    display: flex;
+  }
+}
+.aboutMe, .myObjetive, .transformations, .plans {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.aboutMe .textContainer, .myObjetive .textContainer, .transformations .textContainer, .plans .textContainer {
+  width: 100%;
+  height: 30vh;
+}
+.aboutMe .textContainer .title, .myObjetive .textContainer .title, .transformations .textContainer .title, .plans .textContainer .title {
+  width: 100%;
+  height: 30%;
+}
+.aboutMe .textContainer .title h3, .myObjetive .textContainer .title h3, .transformations .textContainer .title h3, .plans .textContainer .title h3 {
+  font-size: 3rem;
+}
+.aboutMe .textContainer .paragraph, .myObjetive .textContainer .paragraph, .transformations .textContainer .paragraph, .plans .textContainer .paragraph {
+  width: 100%;
+  height: 70%;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.aboutMe .textContainer .paragraph p, .myObjetive .textContainer .paragraph p, .transformations .textContainer .paragraph p, .plans .textContainer .paragraph p {
+  font-size: 2rem;
+}
+.aboutMe .imgContainer, .myObjetive .imgContainer, .transformations .imgContainer, .plans .imgContainer {
+  width: 100%;
+  height: 70%;
+  padding: 20px;
+}
+.aboutMe .imgContainer img, .myObjetive .imgContainer img, .transformations .imgContainer img, .plans .imgContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.plans {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.plans .boxesContainer {
+  min-height: 60vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 360px) {
+  .aboutMe .textContainer .title h3, .myObjetive .textContainer .title h3, .transformations .textContainer .title h3, .plans .textContainer .title h3 {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .sectionsFusioner {
+    display: flex;
+    flex-direction: row;
+  }
+  .sectionsFusioner .aboutMe, .sectionsFusioner .myObjetive {
+    width: 50%;
+    display: flex;
+  }
+  .sectionsFusioner .aboutMe .textContainer {
+    text-align: center;
+  }
+  .sectionsFusioner .myObjetive .textContainer {
+    text-align: center;
+    order: 1;
+  }
+  .sectionsFusioner .myObjetive .imgContainer {
+    order: 0;
+  }
+  .aboutMe .textContainer .title, .aboutMe .textContainer .paragraph, .myObjetive .textContainer .title, .myObjetive .textContainer .paragraph, .transformations .textContainer .title, .transformations .textContainer .paragraph, .plans .textContainer .title, .plans .textContainer .paragraph {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .transformations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .transformations .textContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .transformations .imgContainer {
+    width: 50%;
+    height: 100%;
+  }
+  .transformations .imgContainer img {
+    width: 100%;
+    height: 100%;
+  }
+  .plans {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+.logInSection {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.logInSection video {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.logInSection .formContainer {
+  width: 60%;
+  min-height: 80%;
+  height: auto;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+.logInSection .formContainer .titleContainer {
+  width: 100%;
+  height: 20%;
+  padding-left: 10px;
+  font-size: 5rem;
+  color: white;
+}
+.logInSection .formContainer form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.logInSection .formContainer form .usernameContainer, .logInSection .formContainer form .emailContainer, .logInSection .formContainer form .passwordContainer {
+  width: 80%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.logInSection .formContainer form .usernameContainer label, .logInSection .formContainer form .usernameContainer input, .logInSection .formContainer form .emailContainer label, .logInSection .formContainer form .emailContainer input, .logInSection .formContainer form .passwordContainer label, .logInSection .formContainer form .passwordContainer input {
+  width: 100%;
+  z-index: 1;
+}
+.logInSection .formContainer form .usernameContainer input, .logInSection .formContainer form .emailContainer input, .logInSection .formContainer form .passwordContainer input {
+  padding-left: 10px;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.logInSection .formContainer form label {
+  font-size: 1.5rem;
+  color: rgb(145, 222, 69);
+}
+.logInSection .formContainer .buttonContainer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logInSection .formContainer .buttonContainer .button {
+  min-width: 80px;
+  min-height: 40px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+.logInSection .formContainer .buttonContainer .button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.logInSection .formContainer .buttonContainer a {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgba(169, 4, 191, 0.5);
+}
+.logInSection .formContainer .buttonContainer a:hover {
+  color: rgb(169, 4, 191);
+}
+
+.signUpSection {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.signUpSection video {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.signUpSection .formContainer {
+  width: 60%;
+  min-height: 80%;
+  height: auto;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+.signUpSection .formContainer .titleContainer {
+  width: 100%;
+  height: 20%;
+  padding-left: 10px;
+  font-size: 5rem;
+  color: white;
+}
+.signUpSection .formContainer form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.signUpSection .formContainer form .usernameContainer, .signUpSection .formContainer form .emailContainer, .signUpSection .formContainer form .passwordContainer {
+  width: 80%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.signUpSection .formContainer form .usernameContainer label, .signUpSection .formContainer form .usernameContainer input, .signUpSection .formContainer form .emailContainer label, .signUpSection .formContainer form .emailContainer input, .signUpSection .formContainer form .passwordContainer label, .signUpSection .formContainer form .passwordContainer input {
+  width: 100%;
+  z-index: 1;
+}
+.signUpSection .formContainer form .usernameContainer input, .signUpSection .formContainer form .emailContainer input, .signUpSection .formContainer form .passwordContainer input {
+  padding-left: 10px;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.signUpSection .formContainer form label {
+  font-size: 1.5rem;
+  color: rgb(145, 222, 69);
+}
+.signUpSection .formContainer .buttonContainer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signUpSection .formContainer .buttonContainer .button {
+  min-width: 80px;
+  min-height: 40px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+.signUpSection .formContainer .buttonContainer .button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.signUpSection .formContainer .buttonContainer a {
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgba(169, 4, 191, 0.5);
+}
+.signUpSection .formContainer .buttonContainer a:hover {
+  color: rgb(169, 4, 191);
+}
+
+.welcome {
+  width: 100%;
+  height: 100vh;
+}
+.welcome .textContainer {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome .textContainer p {
+  font-size: 3rem;
+  text-align: center;
+}
+.welcome .textContainer span p {
+  color: rgb(169, 4, 191);
+}
+.welcome .imgContainer {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.welcome .imgContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nutrition, .routine {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 60% 20%;
+  grid-template-areas: "textContainer" "imgContainer" "buttonContainer";
+}
+.nutrition .textContainer, .routine .textContainer {
+  grid-area: textContainer;
+}
+.nutrition .textContainer .title, .routine .textContainer .title {
+  width: 100%;
+}
+.nutrition .textContainer .paragraph, .routine .textContainer .paragraph {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.nutrition .textContainer .paragraph p, .routine .textContainer .paragraph p {
+  font-size: 2rem;
+}
+.nutrition .imgContainer, .routine .imgContainer {
+  grid-area: imgContainer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nutrition .imgContainer img, .routine .imgContainer img {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.nutrition .imgContainer img:hover, .routine .imgContainer img:hover {
+  scale: 105%;
+  transition: 0.5s;
+}
+.nutrition .buttonContainer, .routine .buttonContainer {
+  grid-area: buttonContainer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nutrition .buttonContainer .button, .routine .buttonContainer .button {
+  width: 40%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(169, 4, 191);
+  border-radius: 10px;
+  font-size: 2rem;
+  color: white;
+  z-index: 1;
+}
+.nutrition .buttonContainer .button:hover, .routine .buttonContainer .button:hover {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.concepts {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+.concepts .textContainer {
+  width: 100%;
+  height: auto;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+.concepts .textContainer .title {
+  width: 100%;
+  text-align: center;
+}
+.concepts .textContainer .paragraph {
+  width: 100%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.concepts .textContainer .paragraph p {
+  font-size: 2rem;
+}
+.concepts .textContainer .conceptsContainer {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.concepts .textContainer .conceptsContainer .concept {
+  margin: 10px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+.concepts .textContainer .conceptsContainer .concept:hover {
+  color: rgb(169, 4, 191);
+}
+.concepts .explanationsContainer {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  background-image: url(../img/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+.concepts .explanationsContainer .logo {
+  width: 80%;
+  height: 80%;
+}
+.concepts .explanationsContainer .explanation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(84, 2, 95);
+  flex-direction: column;
+  border-radius: 10px;
+  opacity: 0%;
+}
+.concepts .explanationsContainer .explanation .title {
+  width: 100%;
+  height: 20%;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+}
+.concepts .explanationsContainer .explanation .paragraph {
+  width: 100%;
+  height: 80%;
+  padding: 0px 30px 0 30px;
+  color: white;
+  font-size: 2rem;
+  font-style: italic;
+}
+.concepts .explanationsContainer .showExplanation {
+  opacity: 100%;
+  transition: 1s;
+}
+.concepts .explanationsContainer .logoToggle {
+  display: none;
+}
+
+.audiovisualContent {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 30% 50%;
+  grid-template-areas: "textcontainer" "linksContainer" "videosContainer";
+}
+.audiovisualContent .textContainer .title {
+  width: 100%;
+  text-align: center;
+}
+.audiovisualContent .textContainer .paragraph {
+  padding-left: 10px;
+  text-align: center;
+}
+.audiovisualContent .textContainer .paragraph p {
+  font-size: 2rem;
+}
+.audiovisualContent .linksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.audiovisualContent .linksContainer a {
+  margin: 10px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.audiovisualContent .linksContainer a:hover {
+  color: rgb(169, 4, 191);
+}
+.audiovisualContent .videosContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url(../img/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+.audiovisualContent .videosContainer .audiovisualVideo {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  border-radius: 10px;
+  display: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.audiovisualContent .videosContainer .showAudiovisualVideo {
+  display: flex;
+}
+
+@media screen and (min-width: 700px) {
+  .welcome {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "textContainer imgContainer";
+  }
+  .welcome .textContainer {
+    grid-area: textContainer;
+    height: 100%;
+  }
+  .welcome .imgContainer {
+    grid-area: imgContainer;
+    height: 100%;
+  }
+  .nutrition, .routine {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: "textContainer imgContainer" "textContainer imgContainer" "textContainer buttonContainer";
+  }
+  .nutrition .textContainer, .routine .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .concepts {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "textContainer explanationsContainer";
+  }
+  .concepts .textContainer {
+    grid-area: textContainer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .concepts .textContainer .conceptsContainer {
+    height: 80%;
+    padding-left: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .concepts .explanationsContainer {
+    grid-area: explanationsContainer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .concepts .explanationsContainer .explanation {
+    width: 80%;
+    height: 80%;
+  }
+  .concepts .explanationsContainer .explanation .title {
+    font-size: 5rem;
+  }
+  .audiovisualContent {
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 30% 20% 50%;
+    grid-template-areas: "textContainer videosContainer" "linksContainer videosContainer" "linksContainer videosContainer";
+  }
+  .audiovisualContent .textContainer {
+    grid-area: textContainer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .audiovisualContent .linksContainer {
+    grid-area: linksContainer;
+    padding-left: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .audiovisualContent .videosContainer {
+    grid-area: videosContainer;
+  }
+  .audiovisualContent .videosContainer .video {
+    width: 80%;
+    height: 80%;
+  }
+}
+.adminSession {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 10% 70%;
+  grid-template-areas: "titleContainer" "searchbarContainer" "peopleContainer";
+  justify-items: center;
+}
+.adminSession .titleContainer {
+  grid-area: titleContainer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.adminSession .searchbarContainer {
+  grid-area: searchbarContainer;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminSession .searchbarContainer input {
+  width: 60%;
+  max-width: 300px;
+  height: 60%;
+  padding: 2px 10px 2px 10px;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+}
+.adminSession .searchbarContainer .button {
+  width: 50px;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(169, 4, 191, 0.5);
+  cursor: pointer;
+}
+.adminSession .searchbarContainer .button svg {
+  width: 80%;
+  height: 80%;
+}
+.adminSession .searchbarContainer .button:active {
+  background-color: rgb(169, 4, 191);
+}
+.adminSession .peopleContainer {
+  grid-area: peopleContainer;
+  width: 95%;
+  height: 85%;
+  border-radius: 10px;
+}
+.adminSession .peopleContainer .columns {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+.adminSession .peopleContainer .columns p {
+  color: black;
+  font-weight: bold;
+}
+.adminSession .peopleContainer .columns .columnType, .adminSession .peopleContainer .columns .columnState {
+  display: none;
+}
+.adminSession .peopleContainer .people {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  overflow-y: scroll;
+}
+.adminSession .peopleContainer .people .person {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+.adminSession .peopleContainer .people .person a {
+  color: rgb(169, 4, 191);
+}
+.adminSession .peopleContainer .people .person a:hover {
+  color: rgba(146, 222, 69, 0.5);
+}
+.adminSession .peopleContainer .people .person a:active {
+  color: rgb(145, 222, 69);
+}
+.adminSession .peopleContainer .people .person .columnType, .adminSession .peopleContainer .people .person .columnState {
+  display: none;
+}
+.adminSession .peopleContainer .columns .columnName {
+  width: 40%;
+  padding-left: 20px;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.adminSession .peopleContainer .columns .columnNutrition, .adminSession .peopleContainer .columns .columnRoutine {
+  width: 30%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.adminSession .peopleContainer .people .person .columnName {
+  width: 40%;
+  padding-left: 10px;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.adminSession .peopleContainer .people .person .columnNutrition, .adminSession .peopleContainer .people .person .columnRoutine {
+  width: 30%;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 300px) {
+  .adminSession .searchbarContainer {
+    justify-content: right;
+  }
+  .adminSession .peopleContainer .columns .columnName {
+    font-size: 2rem;
+  }
+  .adminSession .peopleContainer .columns .columnNutrition, .adminSession .peopleContainer .columns .columnRoutine {
+    font-size: 2rem;
+  }
+  .adminSession .peopleContainer .people .person .columnName {
+    font-size: 2rem;
+  }
+  .adminSession .peopleContainer .people .person .columnNutrition, .adminSession .peopleContainer .people .person .columnRoutine {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .adminSession .peopleContainer .columns .columnName {
+    width: 30%;
+    font-size: 3rem;
+  }
+  .adminSession .peopleContainer .columns .columnType, .adminSession .peopleContainer .columns .columnState, .adminSession .peopleContainer .columns .columnNutrition, .adminSession .peopleContainer .columns .columnRoutine {
+    width: 17.5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+  .adminSession .peopleContainer .people .person .columnName {
+    width: 30%;
+    font-size: 3rem;
+  }
+  .adminSession .peopleContainer .people .person .columnType, .adminSession .peopleContainer .people .person .columnState, .adminSession .peopleContainer .people .person .columnNutrition, .adminSession .peopleContainer .people .person .columnRoutine {
+    width: 17.5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+}
+.profileSection {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 0px;
+}
+.profileSection video {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profileSection .formContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.profileSection .formContainer .formulary {
+  width: 60%;
+  height: auto;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+.profileSection .formContainer .formulary .titleContainer {
+  width: 100%;
+  height: 20%;
+  padding-left: 10px;
+  font-size: 5rem;
+  color: white;
+}
+.profileSection .formContainer .formulary form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.profileSection .formContainer .formulary form .enabledForm, .profileSection .formContainer .formulary form .disabledForm {
+  width: 80%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.profileSection .formContainer .formulary form .enabledForm label, .profileSection .formContainer .formulary form .disabledForm label {
+  font-size: 1.5rem;
+  color: rgb(145, 222, 69);
+}
+.profileSection .formContainer .formulary form .enabledForm input, .profileSection .formContainer .formulary form .enabledForm select, .profileSection .formContainer .formulary form .disabledForm input, .profileSection .formContainer .formulary form .disabledForm select {
+  width: 100%;
+  padding-left: 10px;
+  border-radius: 10px;
+  font-style: italic;
+}
+.profileSection .formContainer .formulary form .disabledForm label {
+  color: rgba(146, 222, 69, 0.5);
+}
+.profileSection .formContainer .formulary form .disabledForm input, .profileSection .formContainer .formulary form .disabledForm select {
+  background-color: grey;
+}
+.profileSection .formContainer .formulary form .enabledForm {
+  display: none;
+}
+.profileSection .formContainer .formulary form .enabledForm input, .profileSection .formContainer .formulary form .enabledForm select {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.profileSection .formContainer .formulary form .showForm {
+  display: flex;
+}
+.profileSection .formContainer .formulary form .hideForm {
+  display: none;
+}
+.profileSection .formContainer .formulary .buttonContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.profileSection .formContainer .formulary .buttonContainer .button {
+  min-width: 80px;
+  min-height: 40px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+.profileSection .formContainer .formulary .buttonContainer .button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.profileSection .formContainer .formulary .buttonContainer .checked {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  background-color: rgb(145, 222, 69);
+  border-radius: 50px;
+  z-index: 1;
+}
+.profileSection .formContainer .formulary .buttonContainer .saveButton {
+  display: none;
+}
+.profileSection .formContainer .formulary .buttonContainer .showButton {
+  display: flex;
+}
+.profileSection .formContainer .formulary .buttonContainer .hideButton {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .profileSection .formContainer .formulary form {
+    width: 100%;
+    height: 100%;
+  }
+  .profileSection .formContainer .formulary form .enabledForm, .profileSection .formContainer .formulary form .disabledForm {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .profileSection .formContainer .formulary form .enabledForm .container, .profileSection .formContainer .formulary form .disabledForm .container {
+    width: 40%;
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .profileSection .formContainer .formulary form .enabledForm input, .profileSection .formContainer .formulary form .enabledForm select, .profileSection .formContainer .formulary form .enabledForm label, .profileSection .formContainer .formulary form .disabledForm input, .profileSection .formContainer .formulary form .disabledForm select, .profileSection .formContainer .formulary form .disabledForm label {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

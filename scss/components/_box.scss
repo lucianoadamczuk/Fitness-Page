@@ -1,0 +1,214 @@
+// General box  styles
+.box{
+    width: 90%;
+
+    position: relative;
+
+    background-color: $color__secondary;
+
+    border: 4px solid $color__black-transparent;
+    border-radius: 10px;
+
+    margin: 10px;
+
+    cursor: pointer;
+
+        // box images
+        .imgBox-1, .imgBox-2, .imgBox-3{
+            width: 100%;
+            height: 100%;
+        
+            position: absolute;
+            left: 0;
+            top: 0;
+        
+            opacity: 20%;
+            object-fit: cover;
+        }
+        
+        // box videos general styles
+        .videoBox-1-mobile, .videoBox-2-mobile, .videoBox-3-mobile, .videoBox-1, .videoBox-2, .videoBox-3{
+            width: 100%;
+            height: 100%;
+        
+            position: absolute;
+            left: 0;
+            top: 0;
+        
+            opacity: 60%;
+            object-fit: cover;
+        }
+        
+        // box videos before 1000px
+        .videoBox-1, .videoBox-2, .videoBox-3{
+            display: none;
+        }
+}
+// box:hover
+.box:hover{
+    scale: 105%;
+
+    border: 4px solid $color__white-transparent;
+
+    box-shadow: 0px 0px 10px 1px $color__white-transparent;
+    transition-duration: 0.8s;
+}
+
+// simple box
+.simpleBox{
+    height: 100%;
+
+        .title{
+            width: 100%;
+            
+            padding-left: 10px;
+
+                h4{
+                    font-size: 4rem;
+                }
+        }
+
+        .titleContainerLeave-1, .titleContainerLeave-2, .titleContainerLeave-3{
+            height: 100%;
+            display: none;
+        }
+
+        .titleLeave-1, .titleLeave-2, .titleLeave-3{
+            display: none;
+            z-index: 1;
+        }
+        
+        .description{
+            width: 100%;
+            height: 50%;
+
+            padding: 10px 10px 10px 20px;
+
+                p{
+                    font-size: 2rem;
+                    font-style: italic;
+
+                    z-index: 1;
+                }
+        }
+
+        .buttonContainer{
+            width: 100%;
+            height: 30%;
+
+            @include flexStructureRow;
+
+                .boxButton{
+                    width: 40%;
+                    height: 50%;
+                    
+                    margin-bottom: 10px;
+                    @include flexStructureRow;
+
+                    background-color: $color__white-transparent;
+                    border-radius: 10px;
+                    
+                    font-size: 2rem;
+                    color: $color__white;
+                    z-index: 1;
+                }
+
+                .boxButton:hover{
+                    background-color: $color__black-transparent;
+                }
+
+        }
+}
+
+
+@media screen and (min-width: 700px){
+    .box{
+        width: 650px;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    // general box styles
+    .box{
+        width: 30%;
+        height: 100%;
+
+            .videoBox-1-mobile, .videoBox-2-mobile, .videoBox-3-mobile{
+                display: none;
+            }
+
+            .videoBox-1, .videoBox-2, .videoBox-3{
+                display: block;
+            }
+    }
+
+    // Simple box
+    .simpleBox{
+
+        // title leave
+        .titleContainerLeave-1, .titleContainerLeave-2, .titleContainerLeave-3{
+            @include flexStructureRow;
+
+                .titleLeave-1, .titleLeave-2, .titleLeave-3{
+                    display: flex;
+                    font-size: 6rem;
+                    z-index: 1;
+                }
+        }
+
+        // title enter
+        .titleContainerEnter-1, .titleContainerEnter-2, .titleContainerEnter-3{
+            height: 20%;
+            
+            display: none;
+
+                .titleEnter-1, .titleEnter-2, .titleEnter-3{
+                    font-size: 6rem;
+                    z-index: 1;
+                }
+        }
+
+        // description and button
+        .description, .buttonContainer{
+            display: none;
+            
+        }
+    }
+
+    // Simple box hover
+    .simpleBox:hover{
+
+        // title leave
+        .titleContainerLeave-1, .titleContainerLeave-2, .titleContainerLeave-3{
+            transition: all;
+            transition-duration: 1s;
+            height: 0%;
+
+                .titleLeave-1, .titleLeave-2, .titleLeave-3{
+                    display: flex;
+                    transform: translateY(350%);
+                    opacity: 0%;
+                    transition-duration: 0.3s;
+                }
+        }
+
+         // title enter
+        .titleContainerEnter-1, .titleContainerEnter-2, .titleContainerEnter-3{
+            height: 20%;
+
+            transition-delay: 0.5s;
+            transition-duration: 1.6s;
+            
+            display: flex;
+        }
+        
+        // description and button
+        .description, .buttonContainer{
+            transition: all;
+            transition-duration: 1s;
+            transition-delay: 1s;
+
+            display: flex;
+        }
+    }
+}

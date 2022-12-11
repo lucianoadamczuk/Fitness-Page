@@ -1,0 +1,161 @@
+// About me, my objetive, transformations, plans
+.aboutMe, .myObjetive, .transformations, .plans{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+        .textContainer{
+            width: 100%;
+            height: 30vh;
+
+                .title{
+                    width: 100%;
+                    height: 30%;
+
+                    h3{
+                        font-size: 3rem;
+                    }
+                }
+
+                .paragraph{
+                    width: 100%;
+                    height: 70%;
+
+                    padding-left: 10px;
+
+                    display: flex;
+                    align-items: center;
+
+                        p{
+                            font-size: 2rem;
+                        }
+                }
+        }
+
+        .imgContainer{
+            width: 100%;
+            height: 70%;
+
+            padding: 20px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+        }
+}
+
+// Plans specific styles
+.plans{
+    min-height: 100vh;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    
+
+        .boxesContainer{
+            min-height: 60vh;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+}
+
+@media screen and (min-width: 360px){
+    .aboutMe, .myObjetive, .transformations, .plans{
+
+            .textContainer{
+                    .title{
+
+                        h3{
+                            font-size: 5rem;
+                        }
+                    }
+
+            }
+    }
+}
+
+
+@media screen and (min-width: 700px){
+    .sectionsFusioner{
+        display: flex;
+        flex-direction: row;
+
+            .aboutMe, .myObjetive{
+                width: 50%;
+                display: flex;
+            }
+
+            .aboutMe{
+                .textContainer{
+                    text-align: center;
+                }
+            }
+
+            .myObjetive{
+                .textContainer{
+                    text-align: center;
+                    order: 1;
+                }
+        
+                .imgContainer{
+                    
+                    order: 0;
+                }
+            }
+    }
+    .aboutMe, .myObjetive, .transformations, .plans{
+        .textContainer{
+            .title, .paragraph{
+                @include flexStructureRow;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px){
+
+    // Section fusioner
+
+    .transformations{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .textContainer{
+            width: 50%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .imgContainer{
+            width: 50%;
+            height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+        }
+    }
+    // Plans
+    .plans{
+        height: 100vh;
+        overflow: hidden;
+    }
+
+}

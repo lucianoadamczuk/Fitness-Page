@@ -1,0 +1,11 @@
+@mixin bannerImage{
+    background-image: url(../img/textures/banner.png);
+    background-attachment: fixed;
+}
+
+@mixin logoImage{
+    background-image: url(../img/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
